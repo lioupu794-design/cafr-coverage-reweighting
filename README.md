@@ -75,14 +75,16 @@ results/      result tables quoted in the paper (see below)
 
 ## Results
 
-| paper table | file |
+| file | what it holds |
 |---|---|
-| Table 2 (ERM group risk) | `results/strategy_comparison_erm.csv` |
-| Table 3 (CAFR vs random control) | `results/strategy_comparison_cafr.csv` |
-| Table 4 (matched-protocol baselines) | `results/strategy_comparison_baselines.csv` |
+| `results/strategy_comparison_baselines.csv` | ERM and the four baselines re-run on the STPGNN backbone (PEMS08 topology setting), 63 columns including per-horizon errors; this is the backbone check, not the Graph WaveNet table of the paper |
+| `results/summary_by_run.csv` | the same runs before averaging, one row per seed |
+| `results/cafr_lambda_sweep.csv` | Section 4.6: CAFR at lambda in {1, 2, 4, 8} and the validation-selected VG-CAFR |
+| `results/training_log.txt` | stdout of the baseline run |
 
-Each table is the mean over seeds 2026, 2027 and 2028; `summary_by_run.csv`
-holds the per-seed rows.
+All entries are means over seeds 2026, 2027 and 2028. The ERM and CAFR rows of
+Tables 2 and 3 are reproduced by the commands above; the per-run logs of those
+runs were not archived, so only the aggregate sweep file is shipped.
 
 ## Figures
 
